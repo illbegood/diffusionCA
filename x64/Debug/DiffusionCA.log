@@ -1,0 +1,428 @@
+﻿  model.cpp
+c:\users\user\desktop\proger777\c++\diffusionca\io.h(12): error C2061: синтаксическая ошибка: идентификатор "Controller"
+c:\users\user\desktop\proger777\c++\diffusionca\io.h(14): error C2061: синтаксическая ошибка: идентификатор "Controller"
+c:\users\user\desktop\proger777\c++\diffusionca\controller.h(8): error C2061: синтаксическая ошибка: идентификатор "Controller"
+c:\users\user\desktop\proger777\c++\diffusionca\controller.h(14): error C2143: синтаксическая ошибка: отсутствие ";" перед "&"
+c:\users\user\desktop\proger777\c++\diffusionca\controller.h(14): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+c:\users\user\desktop\proger777\c++\diffusionca\controller.h(14): error C2238: непредвиденные лексемы перед ";"
+c:\users\user\desktop\proger777\c++\diffusionca\controller.h(16): error C2143: синтаксическая ошибка: отсутствие ";" перед "*"
+c:\users\user\desktop\proger777\c++\diffusionca\controller.h(16): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+c:\users\user\desktop\proger777\c++\diffusionca\controller.h(16): error C2238: непредвиденные лексемы перед ";"
+c:\users\user\desktop\proger777\c++\diffusionca\controller.h(17): error C2653: CA2D: не является именем класса или пространства имен
+c:\users\user\desktop\proger777\c++\diffusionca\controller.h(17): error C2065: step: необъявленный идентификатор
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(571): error C2528: pointer: недопустимый указатель на ссылку
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(781): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::allocator<_Ty>"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(444): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Wrap_alloc<std::allocator<_Ty>>"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(496): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Vec_base_types<_Ty,_Alloc>"
+          with
+          [
+              _Ty=CA2D::Cell2D &,
+              _Alloc=std::allocator<CA2D::Cell2D &>
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(683): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc>>"
+          with
+          [
+              _Ty=CA2D::Cell2D &,
+              _Alloc=std::allocator<CA2D::Cell2D &>
+          ]
+  c:\users\user\desktop\proger777\c++\diffusionca\model.h(46): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::vector<CA2D::Cell2D &,std::allocator<_Ty>>"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(572): error C2528: const_pointer: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(595): error C2535: CA2D::Cell2D &(*std::allocator<_Ty>::address(CA2D::Cell2D &) noexcept const): функция-член уже определена или объявлена
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(589): note:  см. объявление "std::allocator<_Ty>::address"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(714): error C2528: pointer: недопустимый указатель на ссылку
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(785): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::allocator_traits<_Alloc>"
+          with
+          [
+              _Alloc=std::allocator<CA2D::Cell2D &>
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(715): error C2528: const_pointer: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(734): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(740): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(828): error C2535: CA2D::Cell2D &(*std::_Wrap_alloc<std::allocator<_Ty>>::address(CA2D::Cell2D &) const): функция-член уже определена или объявлена
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(822): note:  см. объявление "std::_Wrap_alloc<std::allocator<_Ty>>::address"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(174): error C2528: abstract declarator: недопустимый указатель на ссылку
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(447): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Is_simple_alloc<std::_Wrap_alloc<std::allocator<_Ty>>>"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(174): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(176): error C2528: abstract declarator: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(176): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(455): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(191): error C2528: pointer: недопустимый указатель на ссылку
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(500): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Simple_types<CA2D::Cell2D &>"
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(192): error C2528: const_pointer: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(829): error C2528: _Pval: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1278): error C2535: void std::vector<CA2D::Cell2D &,std::allocator<_Ty>>::push_back(CA2D::Cell2D &): функция-член уже определена или объявлена
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(898): note:  см. объявление "std::vector<CA2D::Cell2D &,std::allocator<_Ty>>::push_back"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1361): error C2535: std::_Vector_iterator<std::_Vector_val<std::_Simple_types<CA2D::Cell2D &>>> std::vector<CA2D::Cell2D &,std::allocator<_Ty>>::insert(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<CA2D::Cell2D &>>>,_Ty): функция-член уже определена или объявлена
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(921): note:  см. объявление "std::vector<CA2D::Cell2D &,std::allocator<_Ty>>::insert"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1618): error C2528: _Ptr: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1780): error C2528: _Pval: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(28): error C2528: <template-parameter>: недопустимый указатель на ссылку
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(290): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<CA2D::Cell2D &>>>"
+  c:\users\user\desktop\proger777\c++\diffusionca\model.cpp(17): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Vector_iterator<std::_Vector_val<std::_Simple_types<CA2D::Cell2D &>>>"
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\initializer_list(24): error C2528: iterator: недопустимый указатель на ссылку
+  c:\users\user\desktop\proger777\c++\diffusionca\model.cpp(22): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::initializer_list<CA2D::Cell2D &>"
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\initializer_list(25): error C2528: const_iterator: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\initializer_list(32): error C2528: _First_arg: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\initializer_list(32): error C2528: _Last_arg: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\initializer_list(39): error C2528: begin: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\initializer_list(44): error C2528: end: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\initializer_list(54): error C2528: _First: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\initializer_list(55): error C2528: _Last: недопустимый указатель на ссылку
+c:\users\user\desktop\proger777\c++\diffusionca\model.cpp(33): error C4146: применение унарного минуса к типу без знака; результат оставлен без знака
+c:\users\user\desktop\proger777\c++\diffusionca\model.cpp(33): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+c:\users\user\desktop\proger777\c++\diffusionca\model.cpp(34): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+c:\users\user\desktop\proger777\c++\diffusionca\model.cpp(54): warning C4244: инициализация: преобразование "double" в "unsigned int", возможна потеря данных
+c:\users\user\desktop\proger777\c++\diffusionca\model.cpp(107): error C2039: getCA: не является членом "Controller"
+  c:\users\user\desktop\proger777\c++\diffusionca\controller.h(10): note:  см. объявление "Controller"
+c:\users\user\desktop\proger777\c++\diffusionca\model.cpp(107): error C2530: ca: ссылки должны быть инициализированы
+c:\users\user\desktop\proger777\c++\diffusionca\model.cpp(115): warning C4267: return: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+c:\users\user\desktop\proger777\c++\diffusionca\model.cpp(120): warning C4267: return: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+c:\users\user\desktop\proger777\c++\diffusionca\model.cpp(125): warning C4244: return: преобразование "double" в "unsigned int", возможна потеря данных
+  main.cpp
+c:\users\user\desktop\proger777\c++\diffusionca\model.h(25): error C2061: синтаксическая ошибка: идентификатор "Controller"
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(571): error C2528: pointer: недопустимый указатель на ссылку
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(781): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::allocator<_Ty>"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(444): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Wrap_alloc<std::allocator<_Ty>>"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(496): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Vec_base_types<_Ty,_Alloc>"
+          with
+          [
+              _Ty=CA2D::Cell2D &,
+              _Alloc=std::allocator<CA2D::Cell2D &>
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(683): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc>>"
+          with
+          [
+              _Ty=CA2D::Cell2D &,
+              _Alloc=std::allocator<CA2D::Cell2D &>
+          ]
+  c:\users\user\desktop\proger777\c++\diffusionca\model.h(46): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::vector<CA2D::Cell2D &,std::allocator<_Ty>>"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(572): error C2528: const_pointer: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(595): error C2535: CA2D::Cell2D &(*std::allocator<_Ty>::address(CA2D::Cell2D &) noexcept const): функция-член уже определена или объявлена
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(589): note:  см. объявление "std::allocator<_Ty>::address"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(714): error C2528: pointer: недопустимый указатель на ссылку
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(785): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::allocator_traits<_Alloc>"
+          with
+          [
+              _Alloc=std::allocator<CA2D::Cell2D &>
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(715): error C2528: const_pointer: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(734): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(740): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(828): error C2535: CA2D::Cell2D &(*std::_Wrap_alloc<std::allocator<_Ty>>::address(CA2D::Cell2D &) const): функция-член уже определена или объявлена
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(822): note:  см. объявление "std::_Wrap_alloc<std::allocator<_Ty>>::address"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(174): error C2528: abstract declarator: недопустимый указатель на ссылку
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(447): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Is_simple_alloc<std::_Wrap_alloc<std::allocator<_Ty>>>"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(174): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(176): error C2528: abstract declarator: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(176): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(455): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(191): error C2528: pointer: недопустимый указатель на ссылку
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(500): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Simple_types<CA2D::Cell2D &>"
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(192): error C2528: const_pointer: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(829): error C2528: _Pval: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1278): error C2535: void std::vector<CA2D::Cell2D &,std::allocator<_Ty>>::push_back(CA2D::Cell2D &): функция-член уже определена или объявлена
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(898): note:  см. объявление "std::vector<CA2D::Cell2D &,std::allocator<_Ty>>::push_back"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1361): error C2535: std::_Vector_iterator<std::_Vector_val<std::_Simple_types<CA2D::Cell2D &>>> std::vector<CA2D::Cell2D &,std::allocator<_Ty>>::insert(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<CA2D::Cell2D &>>>,_Ty): функция-член уже определена или объявлена
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(921): note:  см. объявление "std::vector<CA2D::Cell2D &,std::allocator<_Ty>>::insert"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1618): error C2528: _Ptr: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1780): error C2528: _Pval: недопустимый указатель на ссылку
+c:\users\user\desktop\proger777\c++\diffusionca\io.h(12): error C2061: синтаксическая ошибка: идентификатор "Controller"
+c:\users\user\desktop\proger777\c++\diffusionca\io.h(14): error C2061: синтаксическая ошибка: идентификатор "Controller"
+c:\users\user\desktop\proger777\c++\diffusionca\controller.h(8): error C2061: синтаксическая ошибка: идентификатор "Controller"
+  io.cpp
+c:\users\user\desktop\proger777\c++\diffusionca\model.h(25): error C2061: синтаксическая ошибка: идентификатор "Controller"
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(571): error C2528: pointer: недопустимый указатель на ссылку
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(781): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::allocator<_Ty>"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(444): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Wrap_alloc<std::allocator<_Ty>>"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(496): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Vec_base_types<_Ty,_Alloc>"
+          with
+          [
+              _Ty=CA2D::Cell2D &,
+              _Alloc=std::allocator<CA2D::Cell2D &>
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(683): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc>>"
+          with
+          [
+              _Ty=CA2D::Cell2D &,
+              _Alloc=std::allocator<CA2D::Cell2D &>
+          ]
+  c:\users\user\desktop\proger777\c++\diffusionca\model.h(46): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::vector<CA2D::Cell2D &,std::allocator<_Ty>>"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(572): error C2528: const_pointer: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(595): error C2535: CA2D::Cell2D &(*std::allocator<_Ty>::address(CA2D::Cell2D &) noexcept const): функция-член уже определена или объявлена
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(589): note:  см. объявление "std::allocator<_Ty>::address"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(714): error C2528: pointer: недопустимый указатель на ссылку
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(785): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::allocator_traits<_Alloc>"
+          with
+          [
+              _Alloc=std::allocator<CA2D::Cell2D &>
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(715): error C2528: const_pointer: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(734): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(740): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(828): error C2535: CA2D::Cell2D &(*std::_Wrap_alloc<std::allocator<_Ty>>::address(CA2D::Cell2D &) const): функция-член уже определена или объявлена
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(822): note:  см. объявление "std::_Wrap_alloc<std::allocator<_Ty>>::address"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(174): error C2528: abstract declarator: недопустимый указатель на ссылку
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(447): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Is_simple_alloc<std::_Wrap_alloc<std::allocator<_Ty>>>"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(174): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(176): error C2528: abstract declarator: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(176): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(455): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(191): error C2528: pointer: недопустимый указатель на ссылку
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(500): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Simple_types<CA2D::Cell2D &>"
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(192): error C2528: const_pointer: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(829): error C2528: _Pval: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1278): error C2535: void std::vector<CA2D::Cell2D &,std::allocator<_Ty>>::push_back(CA2D::Cell2D &): функция-член уже определена или объявлена
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(898): note:  см. объявление "std::vector<CA2D::Cell2D &,std::allocator<_Ty>>::push_back"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1361): error C2535: std::_Vector_iterator<std::_Vector_val<std::_Simple_types<CA2D::Cell2D &>>> std::vector<CA2D::Cell2D &,std::allocator<_Ty>>::insert(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<CA2D::Cell2D &>>>,_Ty): функция-член уже определена или объявлена
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(921): note:  см. объявление "std::vector<CA2D::Cell2D &,std::allocator<_Ty>>::insert"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1618): error C2528: _Ptr: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1780): error C2528: _Pval: недопустимый указатель на ссылку
+c:\users\user\desktop\proger777\c++\diffusionca\controller.h(8): error C2061: синтаксическая ошибка: идентификатор "Controller"
+c:\users\user\desktop\proger777\c++\diffusionca\controller.h(17): error C2653: IO: не является именем класса или пространства имен
+c:\users\user\desktop\proger777\c++\diffusionca\controller.h(17): error C2065: load: необъявленный идентификатор
+c:\users\user\desktop\proger777\c++\diffusionca\controller.h(17): error C2065: save: необъявленный идентификатор
+  controller.cpp
+c:\users\user\desktop\proger777\c++\diffusionca\model.h(25): error C2061: синтаксическая ошибка: идентификатор "Controller"
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(571): error C2528: pointer: недопустимый указатель на ссылку
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(781): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::allocator<_Ty>"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(444): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Wrap_alloc<std::allocator<_Ty>>"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(496): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Vec_base_types<_Ty,_Alloc>"
+          with
+          [
+              _Ty=CA2D::Cell2D &,
+              _Alloc=std::allocator<CA2D::Cell2D &>
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(683): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc>>"
+          with
+          [
+              _Ty=CA2D::Cell2D &,
+              _Alloc=std::allocator<CA2D::Cell2D &>
+          ]
+  c:\users\user\desktop\proger777\c++\diffusionca\model.h(46): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::vector<CA2D::Cell2D &,std::allocator<_Ty>>"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(572): error C2528: const_pointer: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(595): error C2535: CA2D::Cell2D &(*std::allocator<_Ty>::address(CA2D::Cell2D &) noexcept const): функция-член уже определена или объявлена
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(589): note:  см. объявление "std::allocator<_Ty>::address"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(714): error C2528: pointer: недопустимый указатель на ссылку
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(785): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::allocator_traits<_Alloc>"
+          with
+          [
+              _Alloc=std::allocator<CA2D::Cell2D &>
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(715): error C2528: const_pointer: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(734): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(740): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(828): error C2535: CA2D::Cell2D &(*std::_Wrap_alloc<std::allocator<_Ty>>::address(CA2D::Cell2D &) const): функция-член уже определена или объявлена
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(822): note:  см. объявление "std::_Wrap_alloc<std::allocator<_Ty>>::address"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(174): error C2528: abstract declarator: недопустимый указатель на ссылку
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(447): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Is_simple_alloc<std::_Wrap_alloc<std::allocator<_Ty>>>"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(174): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(176): error C2528: abstract declarator: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(176): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(455): error C2528: <template-parameter>: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(191): error C2528: pointer: недопустимый указатель на ссылку
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(500): note: см. ссылку на создание экземпляров класса шаблон при компиляции "std::_Simple_types<CA2D::Cell2D &>"
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xmemory0(192): error C2528: const_pointer: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(829): error C2528: _Pval: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1278): error C2535: void std::vector<CA2D::Cell2D &,std::allocator<_Ty>>::push_back(CA2D::Cell2D &): функция-член уже определена или объявлена
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(898): note:  см. объявление "std::vector<CA2D::Cell2D &,std::allocator<_Ty>>::push_back"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1361): error C2535: std::_Vector_iterator<std::_Vector_val<std::_Simple_types<CA2D::Cell2D &>>> std::vector<CA2D::Cell2D &,std::allocator<_Ty>>::insert(std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<CA2D::Cell2D &>>>,_Ty): функция-член уже определена или объявлена
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(921): note:  см. объявление "std::vector<CA2D::Cell2D &,std::allocator<_Ty>>::insert"
+          with
+          [
+              _Ty=CA2D::Cell2D &
+          ]
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1618): error C2528: _Ptr: недопустимый указатель на ссылку
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1780): error C2528: _Pval: недопустимый указатель на ссылку
+c:\users\user\desktop\proger777\c++\diffusionca\io.h(12): error C2061: синтаксическая ошибка: идентификатор "Controller"
+c:\users\user\desktop\proger777\c++\diffusionca\io.h(14): error C2061: синтаксическая ошибка: идентификатор "Controller"
+c:\users\user\desktop\proger777\c++\diffusionca\controller.h(8): error C2061: синтаксическая ошибка: идентификатор "Controller"
+c:\users\user\desktop\proger777\c++\diffusionca\controller.cpp(21): error C2197: command : слишком много аргументов для вызова
+  Создание кода...
