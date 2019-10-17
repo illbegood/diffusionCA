@@ -5,11 +5,12 @@
 
 using namespace std;
 
-int IO::load(vector<string>& args, Controller& c)
+int IO::cmd_load(vector<string>& args, Controller& c)
 {
+	int ret = 3;
 	ifstream file;
 	if (args.size() < 2)
-		return 1;
+		return NOT_ENOUGH_ARGUMENTS;
 	file.open(args[1]);
 	if (file.is_open()) {
 		size_t x = 0, y = 0;
@@ -23,34 +24,45 @@ int IO::load(vector<string>& args, Controller& c)
 					values.push_back(i);
 				if (values.size() == 0) {
 					values.reserve(x*y);
-					fill(values.begin(), values.end(), 0);
+					ret = OK;
 				}
-				else if (values.size() != x * y)
-					return 2;
+				else if (values.size() != x*y)
+					ret = INVALID_FILE_FORMAT;
+				else
+					ret = OK;
 			}
+			else
+				ret = ERROR_WHILE_READING;
+			c.setCA(new CA2D(x, y, p, values));
 		}
 		file.close();
-		return 0;
+		return ret;
 	}
+	return CANNOT_OPEN_FILE;
 }
 
-int IO::save(vector<string>& args, Controller& c)
+int IO::cmd_save(vector<string>& args, Controller& c)
 {
-	void *ret = 0;
+	int ret;
 	CA2D &ca = c.getCA();
 	ofstream file;
 	if (args.size() < 2)
-		return 1;
+		return NOT_ENOUGH_ARGUMENTS;
 	file.open(args[1]);
 	if (file.is_open()) {
+		size_t count = 0, x = ca.getSizeX(), y = ca.getSizeY();
+		vector<unsigned> v = ca.getParticles();
 		file << ca.getSizeX() << " " << ca.getSizeY() << " " << ca.getPMove() << endl;
-		auto v = ca.getParticles();
-		size_t i;
-		for (i = 0; i < v.size(); ++i)
-			if (!(file << i))
-				break;
-		if (i != v.size())
-			return 3;
+		for (size_t i = 0; i < y; ++i) {
+			for (size_t j = 0; j < x; ++j) {
+				if (!(file << v[i * y + j] << " ")) break;
+				++count;
+			}
+			if (!(file << endl)) break;
+		}
+		ret = count == v.size() ? OK : ERROR_WHILE_WRITING;
+		file.close();
+		return ret;
 	}
-	return 0;
+	return CANNOT_OPEN_FILE;
 }
