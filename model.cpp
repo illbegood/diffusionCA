@@ -1,9 +1,13 @@
+#define _USE_MATH_DEFINES
+
 #include "model.h"
 #include "controller.h"
 #include <cstdlib>
 #include <cmath>
 #include <random>
 #include <algorithm>
+
+#include <fstream>
 
 using namespace std;
 
@@ -91,6 +95,12 @@ bool CA2D::isOutOfBounds(long long x, long long y) {
 	return !(isInClosedInterval(x, 0, sizeX - 1) && isInClosedInterval(y, 0, sizeY - 1));
 }
 
+CA2D::~CA2D()
+{
+	delete grid;
+	delete newGrid;
+}
+
 CA2D::CA2D(size_t x, size_t y, double p, vector<unsigned> values) {
 	bool ok = false;
 	if (pMove >= 0 && pMove < 1) {
@@ -157,4 +167,30 @@ vector<unsigned> CA2D::getParticles()
 	for each (Cell2D cell in *grid)
 		ret.push_back(cell.particles);
 	return ret;
+}
+
+int cmd_green(vector<string>& args, Controller & c)
+{
+	if (args.size() < 5)
+		return NOT_ENOUGH_ARGUMENTS;
+	size_t x = stoi(args[1]), y = stoi(args[2]);
+	double k = stod(args[3]);
+	unsigned t = stoi(args[4]);
+	//vector<double> grid(x*y);
+	double cx = (x - 1) / 2.0, cy = (y - 1) / 2.0;
+	ofstream file(args.size() < 6 ? "green" : args[5]);
+	if (file.is_open()) {
+		file << "Parameters: " << x << " " << y << " " << k << " " << t << endl;
+		for (size_t iy = 0; iy < y; ++iy) {
+			for (size_t ix = 0; ix < x; ++ix) {
+				double r2 = (cx - ix)*(cx - ix) + (cy - iy)*(cy - iy);
+				double d = 1e5 * exp(-r2 / (4 * k*t)) / (4 * M_PI*k*t);
+				file << d << " ";
+			}
+			file << endl;
+		}
+		file.close();
+		return OK;
+	}
+	return CANNOT_OPEN_FILE;
 }

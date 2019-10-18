@@ -8,10 +8,9 @@ using namespace std;
 int IO::cmd_load(vector<string>& args, Controller& c)
 {
 	int ret = 3;
-	ifstream file;
 	if (args.size() < 2)
 		return NOT_ENOUGH_ARGUMENTS;
-	file.open(args[1]);
+	ifstream file(args[1]);
 	if (file.is_open()) {
 		size_t x = 0, y = 0;
 		double p = -1;
@@ -45,10 +44,9 @@ int IO::cmd_save(vector<string>& args, Controller& c)
 {
 	int ret;
 	CA2D &ca = c.getCA();
-	ofstream file;
 	if (args.size() < 2)
 		return NOT_ENOUGH_ARGUMENTS;
-	file.open(args[1]);
+	ofstream file(args[1]);
 	if (file.is_open()) {
 		size_t count = 0, x = ca.getSizeX(), y = ca.getSizeY();
 		vector<unsigned> v = ca.getParticles();

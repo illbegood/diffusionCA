@@ -1,8 +1,6 @@
 #ifndef IO_H
 #define IO_H
 
-class Controller;
-
 #include "controller.h"
 #include <vector>
 #include <string>

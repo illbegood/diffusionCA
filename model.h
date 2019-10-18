@@ -7,9 +7,6 @@
 
 using namespace std;
 
-class Controller;
-class CA2D;
-
 class CA2D {
 public:
 	struct Cell2D {
@@ -25,6 +22,8 @@ public:
 	};
 
 	CA2D() {}
+
+	~CA2D();
 
 	CA2D(size_t x, size_t y, double p, vector<unsigned> values);
 
@@ -42,8 +41,10 @@ public:
 
 	vector<unsigned> getParticles();
 
+
+
 private:
-	const size_t minSize = 1, maxSize = 1000,
+	const static size_t minSize = 1, maxSize = 1000,
 		minSizeX = minSize, minSizeY = minSize,
 		maxSizeX = maxSize, maxSizeY = maxSize;
 	size_t sizeX, sizeY, size;
@@ -75,4 +76,7 @@ private:
 	bool isOutOfBounds(long long x, long long y);
 
 };
+
+int cmd_green(vector<string>& args, Controller &c);
+
 #endif

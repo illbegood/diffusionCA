@@ -9,7 +9,14 @@ using namespace std;
 
 Controller::Controller()
 {
-	commandMap = { { "load", IO::cmd_load }, { "step", CA2D::cmd_step } ,{ "save", IO::cmd_save }, {"delta", CA2D::cmd_delta} };
+	commandMap = { { "load", IO::cmd_load }, 
+	{ "step", CA2D::cmd_step },
+	{ "save", IO::cmd_save }, 
+	{"delta", CA2D::cmd_delta},
+	{"green", cmd_green } };
+	errorMap = { {OK, "Done!"}, 
+	{NOT_ENOUGH_ARGUMENTS, "Error: Not enough arguments."},
+	{INVALID_ARGUMENT, "Error"} };
 }
 
 void Controller::run(int argc, char ** argv)
@@ -21,8 +28,9 @@ void Controller::run(int argc, char ** argv)
 		vector<string> tokens(istream_iterator<string>{iss},
 			istream_iterator<string>());
 		auto it = commandMap.find(tokens[0]);
-		if (it != commandMap.end())
-			it->second(tokens, *this);
+		if (it != commandMap.end()) {
+			int result = it->second(tokens, *this);
+		}
 		else
 			cout << "Command not found!" << endl;
 	}
