@@ -2,10 +2,15 @@
 #define MODEL_H
 
 #include "controller.h"
+#include <map>
 #include <vector>
 #include <string>
+#include <random>
 
 using namespace std;
+
+enum Mode;
+enum Border;
 
 class CA2D {
 public:
@@ -31,6 +36,10 @@ public:
 
 	static int cmd_delta(vector<string>& args, Controller &c);
 
+	static int cmd_mode(vector<string>& args, Controller &c);
+
+	static int cmd_border(vector<string>& args, Controller &c);
+
 	size_t getSizeX();
 
 	size_t getSizeY();
@@ -40,8 +49,6 @@ public:
 	double getPMove();
 
 	vector<unsigned> getParticles();
-
-
 
 private:
 	const static size_t minSize = 1, maxSize = 1000,
@@ -57,15 +64,21 @@ private:
 
 	vector<Cell2D> *grid, *newGrid;
 
+	uniform_real_distribution<double> urd;
+	uniform_int_distribution<> uid;
+	default_random_engine re;
+
 	Cell2D &get(vector<Cell2D> *grid, size_t x, size_t y);
 
 	void set(vector<Cell2D> *grid, size_t x, size_t y, unsigned value);
 
-	void step(unsigned count);
+	void step(unsigned count, Mode mode, Border border);
 
 	unsigned getMovingParticles(Cell2D &cell);
 
-	void checkOOBAndAddParticles(vector<Cell2D> *grid, long long x, long long y, unsigned amount);
+	bool moveParticleRandom(size_t x, size_t y);
+
+	bool checkOOBAndAddParticles(long long x, long long y, unsigned amount);
 
 	double random01();
 

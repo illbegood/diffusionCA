@@ -9,14 +9,19 @@ using namespace std;
 
 Controller::Controller()
 {
+	mode = EACH_DIRECTION_EVENLY;
+	border = NONE;
 	commandMap = { { "load", IO::cmd_load }, 
 	{ "step", CA2D::cmd_step },
 	{ "save", IO::cmd_save }, 
 	{"delta", CA2D::cmd_delta},
-	{"green", cmd_green } };
+	{"green", cmd_green },
+	{"mode", CA2D::cmd_mode},
+	{"border", CA2D::cmd_border} };
+	//not yet used
 	errorMap = { {OK, "Done!"}, 
 	{NOT_ENOUGH_ARGUMENTS, "Error: Not enough arguments."},
-	{INVALID_ARGUMENT, "Error"} };
+	{INVALID_ARGUMENT, "Error: invalid argument"} };
 }
 
 void Controller::run(int argc, char ** argv)
