@@ -5,60 +5,82 @@
 
 using namespace std;
 
-int IO::cmd_load(vector<string>& args, Controller& c)
+int IO::cmd_load(const vector<string>& args, Controller& c)
 {
-	int ret = 3;
-	if (args.size() < 2)
+	unsigned argIndex = 1;
+	int ret;
+	if (args.size() <= argIndex)
 		return NOT_ENOUGH_ARGUMENTS;
-	ifstream file(args[1]);
+	ifstream file(args[argIndex++]);
 	if (file.is_open()) {
-		size_t x = 0, y = 0;
-		double p = -1;
-		file >> x >> y >> p;
-		if (x && y && (p + 1)) {
-			vector<unsigned> values;
-			unsigned i;
-			if (file) {
-				while (file >> i)
-					values.push_back(i);
-				if (values.size() == 0) {
-					values.reserve(x*y);
-					ret = OK;
-				}
-				else if (values.size() != x*y)
-					ret = INVALID_FILE_FORMAT;
-				else
-					ret = OK;
-			}
-			else
-				ret = ERROR_WHILE_READING;
-			c.setCA(new CA2D(x, y, p, values));
+		unsigned dim, totalSize = 1;
+		double p;
+		file >> dim;
+		vector<size_t> size(dim);
+		for (unsigned i = 0; i < dim; ++i) {
+			file >> size[i];
+			totalSize *= size[i];
 		}
+		file >> p;
+		vector<unsigned> values;
+		unsigned i;
+		if (file) {
+			while (file >> i)
+				values.push_back(i);
+			ret = values.size() == totalSize ? OK : INVALID_FILE_FORMAT;
+		}
+		else
+			ret = ERROR_WHILE_READING;
+		c.setCA(new CA(size, p, values));
 		file.close();
 		return ret;
 	}
 	return CANNOT_OPEN_FILE;
 }
 
-int IO::cmd_save(vector<string>& args, Controller& c)
+#include <iostream>
+int IO::save(CA &ca, ofstream &file) {
+
+	//cout << "file opened " << args[1] << endl;
+	vector<size_t> size = ca.getSize();
+	//cout << "got size " << args[1] << endl;
+	vector<unsigned> v = ca.getParticles();
+	//cout << "got values " << args[1] << endl;
+	file << "Parameters: " << size.size() << " ";
+	for (unsigned i = 0; i < size.size(); ++i)
+		file << size[i] << " ";
+	//cout << "sizes written " << args[1] << endl;
+	file << ca.getPMove() << endl;
+	//cout << "parameters written " << args[1] << endl;
+	unsigned newLines = 0;
+	size_t totalSize = ca.getTotalSize(), count;
+	vector<size_t> coord(size.size());
+	for (count = 0; count < totalSize; ++count) {
+		for (unsigned i = 0; i < newLines; ++i)
+			if (!(file << endl))
+				break;
+		if (!(file << v[count] << " "))
+			break;
+		newLines = CA::inc(coord, size);
+	}
+	//cout << "writing finished " << args[1] << endl;
+	int ret = count == v.size() ? OK : ERROR_WHILE_WRITING;
+	//file.close();
+	return ret;
+}
+
+int IO::cmd_save(const vector<string>& args, Controller& c)
 {
 	int ret;
-	CA2D &ca = c.getCA();
-	if (args.size() < 2)
+	unsigned argIndex = 1;
+	CA *ca = c.getCA();
+	if (!ca)
+		return NO_CA_FOUND;
+	if (args.size() < argIndex)
 		return NOT_ENOUGH_ARGUMENTS;
-	ofstream file(args[1]);
+	ofstream file(args[argIndex++]);
 	if (file.is_open()) {
-		size_t count = 0, x = ca.getSizeX(), y = ca.getSizeY();
-		vector<unsigned> v = ca.getParticles();
-		file << ca.getSizeX() << " " << ca.getSizeY() << " " << ca.getPMove() << endl;
-		for (size_t i = 0; i < y; ++i) {
-			for (size_t j = 0; j < x; ++j) {
-				if (!(file << v[i * y + j] << " ")) break;
-				++count;
-			}
-			if (!(file << endl)) break;
-		}
-		ret = count == v.size() ? OK : ERROR_WHILE_WRITING;
+		ret = save(*ca, file);
 		file.close();
 		return ret;
 	}

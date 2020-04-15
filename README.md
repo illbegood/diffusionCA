@@ -1,1 +1,2 @@
-"# diffusionCA" 
+# synchronous-diffusion
+

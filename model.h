@@ -9,87 +9,135 @@
 
 using namespace std;
 
-enum Mode;
-enum Border;
+enum Mode { FOR_EACH_PARTICLE = 0, EACH_DIRECTION_EVENLY = 1 };
+enum Border { NONE = 0, IMPENETRABLE = 1 };
 
-class CA2D {
+
+class CA {
 public:
-	struct Cell2D {
+	const static unsigned initialCount = 1e7;
+	int mpi_rank = 0;
+	struct Cell {
 		//max starting value, may grow bigger afterwards
 		const unsigned int maxParticles = (unsigned)-1;
 		unsigned particles = 0;
-		Cell2D(){ }
-		Cell2D(unsigned i) {
+		Cell() { }
+		Cell(unsigned i) {
 			if (i <= maxParticles)
 				particles = i;
 		}
-		Cell2D &operator =(const Cell2D &);
+		Cell &operator =(const Cell &);
 	};
 
-	CA2D() {}
+	CA() {}
 
-	~CA2D();
+	~CA();
 
-	CA2D(size_t x, size_t y, double p, vector<unsigned> values);
+	CA(const vector<size_t> &size, double p, vector<unsigned> values);
 
-	static int cmd_step(vector<string>& args, Controller &c);
+	/*CA(vector<size_t> &size, double p);*/
 
-	static int cmd_delta(vector<string>& args, Controller &c);
+	static int cmd_step(const vector<string>& args, Controller &c);
 
-	static int cmd_mode(vector<string>& args, Controller &c);
+	static int cmd_delta(const vector<string>& args, Controller &c);
 
-	static int cmd_border(vector<string>& args, Controller &c);
+	static int cmd_blank(const vector<string>& args, Controller &c);
 
-	size_t getSizeX();
+	static int cmd_mode(const vector<string>& args, Controller &c);
 
-	size_t getSizeY();
+	static int cmd_border(const vector<string>& args, Controller &c);
 
-	size_t getSize();
+	void set(const vector<size_t> &coord, unsigned value);
+	
+	vector<size_t> getSize();
+
+	size_t getTotalSize();
 
 	double getPMove();
 
 	vector<unsigned> getParticles();
 
-private:
-	const static size_t minSize = 1, maxSize = 1000,
-		minSizeX = minSize, minSizeY = minSize,
-		maxSizeX = maxSize, maxSizeY = maxSize;
-	size_t sizeX, sizeY, size;
+	void stepBounds();
 
-	const unsigned dimension2D = 2;
-	const unsigned directions2D = dimension2D * 2;
+	void stepNoBounds();
+
+	vector<unsigned> getLeftBorder();
+
+	vector<unsigned> getRightBorder();
+
+	void addToLeftBorder(const vector<unsigned>& values);
+
+	void addToRightBorder(const vector<unsigned>& values);
+
+	void finishStep();
+
+	bool testN(vector<size_t> &v) {
+		Cell &c = get(newGrid, v);
+		return c.particles != 0;
+	}
+
+	bool testO(vector<size_t> &v) {
+		Cell &c = get(grid, v);
+		return c.particles != 0;
+	}
+
+	static unsigned inc(vector<size_t> &coord, const vector<size_t> &size);
+
+	void save(string msg, string name);
+
+	static size_t getIndex(const vector<size_t> &coord, vector<size_t> &size);
+
+private:
+	int debug = 0;
+	const static unsigned maxDimensions = 3;
+	unsigned dimensions;
+	const static size_t min_Size = 1, max_Size = 1000;
+	const size_t minSize[maxDimensions] = { min_Size, min_Size, min_Size },
+		maxSize[maxDimensions] = { max_Size, max_Size, max_Size };
+	size_t totalSize, crossSectionSize;
+	vector<size_t> size;
+
 	const static unsigned maxStep = -1;
 
 	double pMove;
 
-	vector<Cell2D> *grid, *newGrid;
+	vector<Cell> *grid, *newGrid;
 
 	uniform_real_distribution<double> urd;
 	uniform_int_distribution<> uid;
 	default_random_engine re;
 
-	Cell2D &get(vector<Cell2D> *grid, size_t x, size_t y);
+	Mode mode = EACH_DIRECTION_EVENLY;
+	Border border = NONE;
 
-	void set(vector<Cell2D> *grid, size_t x, size_t y, unsigned value);
+	vector<size_t> coords(size_t index);
 
-	void step(unsigned count, Mode mode, Border border);
+	Cell &get(vector<Cell> *grid, size_t i);
 
-	unsigned getMovingParticles(Cell2D &cell);
+	Cell &get(vector<Cell> *grid, vector<size_t> &coord);
 
-	bool moveParticleRandom(size_t x, size_t y);
+	void set(vector<Cell> *grid, vector<size_t> &coord, unsigned value);
 
-	bool checkOOBAndAddParticles(long long x, long long y, unsigned amount);
+	void stepN(unsigned count);
+
+	void step(size_t first, size_t last);
+
+	unsigned getMovingParticles(Cell &cell);
+
+	void moveParticleRandom(Cell &cell, vector<size_t> &coord);
+
+	void moveParticles(Cell &cell, vector<size_t> &coord, unsigned amount, int delta, unsigned dim);
 
 	double random01();
 
-	unsigned randomUInt(unsigned max);
+	unsigned randomUInt();
 
 	static bool isInClosedInterval(long long x, long long min, long long max);
 
-	bool isOutOfBounds(long long x, long long y);
+	void inc(vector<size_t> &coord);
 
 };
 
-int cmd_green(vector<string>& args, Controller &c);
+int cmd_green(const vector<string>& args, Controller &c);
 
 #endif

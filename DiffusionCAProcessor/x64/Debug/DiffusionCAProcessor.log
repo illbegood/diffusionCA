@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\users\user\desktop\proger777\c++\diffusionca\synchronous-diffusion\model.h(17): warning C4244: инициализация: преобразование "double" в "const unsigned int", возможна потеря данных
+  DiffusionCAProcessor.vcxproj -> C:\Users\user\Desktop\proger777\c++\DiffusionCA\synchronous-diffusion\x64\Debug\DiffusionCAProcessor.exe
+  DiffusionCAProcessor.vcxproj -> C:\Users\user\Desktop\proger777\c++\DiffusionCA\synchronous-diffusion\x64\Debug\DiffusionCAProcessor.pdb (Partial PDB)
